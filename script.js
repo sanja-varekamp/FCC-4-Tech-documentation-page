@@ -1,10 +1,17 @@
-document.querySelector("fa-bars").addEventListener("click", displayMenu); 
+mybutton = document.getElementById("myBtn");
 
-function displayMenu() {
-    const nav = document.getElementById('navbar');
-    nav.style.display = 'block';
-    const fa_bars = document.querySelector("fa-bars");
-    fa_bars.style.display = 'none';
-    const fa_times = document.querySelector("fa-times");
-    fa_times.style.display = 'block';
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
 }
+
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
